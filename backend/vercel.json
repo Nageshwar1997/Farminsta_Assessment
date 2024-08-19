@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "NORDSTROMRACK.com",
+  "name": "Farminsta_Assessment",
   "builds": [
     {
       "src": "./index.js",

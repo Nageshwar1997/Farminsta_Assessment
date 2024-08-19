@@ -76,7 +76,9 @@ const getAllCreatorsController = async (req, res) => {
 };
 
 // Routes
-app.get("/api/all-creators", getAllCreatorsController);
+app.get("/creators", getAllCreatorsController);
+
+// app.get
 
 // Router
 // app.use("/api", router);
