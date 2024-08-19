@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const router = express.Router();
+// const router = express.Router();
 
 const PORT = 8080 || 5000;
 
@@ -76,10 +76,10 @@ const getAllCreatorsController = async (req, res) => {
 };
 
 // Routes
-router.get("/all-creators", getAllCreatorsController);
+app.get("/api/all-creators", getAllCreatorsController);
 
 // Router
-app.use("/api", router);
+// app.use("/api", router);
 
 app.listen(PORT, async () => {
   try {
