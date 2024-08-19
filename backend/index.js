@@ -83,7 +83,9 @@ app.use("/api", router);
 
 app.listen(PORT, async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(
+      "mongodb+srv://nageshpawarpatil:nageshwar1997@pepsales.dfzqba9.mongodb.net/Farminsta?retryWrites=true&w=majority&appName=InterviewAssignments"
+    );
     console.log(`Server connected to MongoDB`);
     console.log(`Server running on port: ${PORT}`);
   } catch (error) {
