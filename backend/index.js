@@ -76,7 +76,7 @@ const getAllCreatorsController = async (req, res) => {
 };
 
 // Routes
-app.get("/creators", getAllCreatorsController);
+app.get("/all-creators", getAllCreatorsController);
 
 // app.get
 
@@ -86,7 +86,7 @@ app.get("/creators", getAllCreatorsController);
 app.listen(PORT, async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://nageshpawarpatil:nageshwar1997@pepsales.dfzqba9.mongodb.net/Farminsta?retryWrites=true&w=majority&appName=InterviewAssignments"
+      "mongodb+srv://nageshpawarpatil:nageshwar1997@placementassignments.rdmdzqe.mongodb.net/Farminsta?retryWrites=true&w=majority&appName=PlacementAssignments"
     );
     console.log(`Server connected to MongoDB`);
     console.log(`Server running on port: ${PORT}`);
