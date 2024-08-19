@@ -1,10 +1,11 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// const router = express.Router();
+const router = express.Router();
 
-const PORT = 8080 || 5000;
+const PORT = process.env.PORT || 8080 || 5000;
 
 const app = express();
 app.use(cors());
@@ -75,19 +76,17 @@ const getAllCreatorsController = async (req, res) => {
   }
 };
 
-// Routes
-app.get("/all-creators", getAllCreatorsController);
-
-// app.get
-
 // Router
-// app.use("/api", router);
+app.use("/api", router);
+
+// Routes
+router.get("/all-creators", getAllCreatorsController);
+
+// console.log(process.env.MONGODB_URI);
 
 app.listen(PORT, async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://nageshpawarpatil:nageshwar1997@placementassignments.rdmdzqe.mongodb.net/Farminsta?retryWrites=true&w=majority&appName=PlacementAssignments"
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log(`Server connected to MongoDB`);
     console.log(`Server running on port: ${PORT}`);
   } catch (error) {
